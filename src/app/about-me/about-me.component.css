@@ -1,0 +1,11 @@
+mat-grid-tile {
+  border-radius: 4px;
+}
+mat-grid-list{
+  width: 75vw;
+}
+
+mat-card{
+  width: 100%;
+  height: 80%;
+}

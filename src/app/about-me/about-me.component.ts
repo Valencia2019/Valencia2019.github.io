@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import {MatCardModule} from '@angular/material/card'
 import {MatGridListModule} from '@angular/material/grid-list';
-
+import {MatButtonModule} from '@angular/material/button';
 @Component({
-  selector: 'about-me',
+  selector: 'app-about-me',
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.css',
   standalone: true,
-  imports: [MatCardModule, MatGridListModule]
+  imports: [MatCardModule, MatGridListModule, MatButtonModule]
 })
 export class AboutMeComponent {
 

@@ -261,7 +261,7 @@ a,
   .spacer {
     flex: 1 1 auto;
   }
-  
+
   .material-symbols-outlined {
     font-variation-settings:
     'FILL' 0,
@@ -269,3 +269,8 @@ a,
     'GRAD' -25,
     'opsz' 20
   }
+
+  .center{
+    margin: auto;
+    text-align: center;
+}

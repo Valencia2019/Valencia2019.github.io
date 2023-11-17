@@ -7,7 +7,7 @@ import {MatTabsModule} from '@angular/material/tabs';
   standalone: true,
   imports: [CommonModule, MatTabsModule],
   templateUrl: './my-projects.component.html',
-  styleUrl: './my-projects.component.css'
+  styleUrls: ['./my-projects.component.css']
 })
 export class MyProjectsComponent {
 

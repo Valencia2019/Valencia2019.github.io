@@ -1,0 +1,24 @@
+<div class="content" role="main">
+  <!-- Options -->
+  <h2 ><a routerLink="/">Welcome to my portfolio!</a></h2>
+  <p>Use the links below to learn more about me, see my resume and examples of my code.</p>
+  <nav class="card-container">
+    <a class="card card-small" routerLink="/about-me" tabindex="0">
+      <span class="material-symbols-outlined">info</span>
+      <span>About me</span>
+    </a>
+
+    <button class="card card-small" routerLink="/my-projects" tabindex="0">
+      <span class="material-symbols-outlined">folder_open</span>
+      <span>My projects</span>
+    </button>
+    <button class="card card-small" routerLink="/contact-me" tabindex="0">
+      <span class="material-symbols-outlined">contacts</span>
+      <span>Contact Me</span>
+    </button>
+
+  </nav>
+  <router-outlet></router-outlet>
+</div>
+
+

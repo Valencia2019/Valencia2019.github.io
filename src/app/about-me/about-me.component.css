@@ -1,0 +1,15 @@
+.about-me-card{
+  max-width: 50%;
+}
+.about-me-img{
+  max-height: 25%;
+}
+
+.header-img {
+  background-image: url('src\assets\profilepic1.jpeg');
+  background-size: cover;
+}
+
+button, p {
+  margin: 5px;
+}

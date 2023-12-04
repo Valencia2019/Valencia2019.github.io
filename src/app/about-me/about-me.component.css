@@ -1,8 +1,12 @@
 .about-me-card{
   max-width: 50%;
+  float: left;
+  margin-right: 10px;
 }
-.about-me-img{
-  max-height: 10%;
+#about-me-img{
+  float: left;
+  max-width: 50%;
+  padding-right: 5px;
 }
 
 .header-img {
@@ -12,4 +16,8 @@
 
 button, p {
   margin: 5px;
+}
+
+p{
+  text-align: justify;
 }

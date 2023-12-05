@@ -1,0 +1,23 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+            
+    steps:
+    - uses: actions/checkout@v3
+    - name: Angular Deploy gh-pages Actions
+      uses: AhsanAyaz/angular-deploy-gh-pages-actions@1.4.0
+      with:
+        github_access_token: ${{ secrets.DEPLOY_TOKEN }}
+        build_configuration: production 
+        base_href: Valencia2019.github.io
+        deploy_branch: main 
+        angular_dist_build_folder: dist/portfolio
+
+permissions:
+  contents: write

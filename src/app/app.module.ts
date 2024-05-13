@@ -8,14 +8,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { provideRouter, RouterOutlet, RouterLink } from '@angular/router';
 import { routes } from './app.routes';
+import { MyProjectsComponent } from './my-projects/my-projects.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactMeComponent,
+    AboutMeComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -25,7 +31,10 @@ import { routes } from './app.routes';
     MatButtonModule,
     RouterOutlet,
     RouterLink,
-    AboutMeComponent
+    MatTooltipModule,
+    MatCardModule,
+    MatGridListModule,
+    MyProjectsComponent
   ],
   providers: [provideRouter(routes)],
   bootstrap: [AppComponent]

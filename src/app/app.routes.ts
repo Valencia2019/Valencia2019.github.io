@@ -5,6 +5,6 @@ import { MyProjectsComponent } from './my-projects/my-projects.component';
 
 export const routes: Routes = [
   {path: 'contact-me', component: ContactMeComponent},
-{path: 'about-me', component: AboutMeComponent},
-{path: 'my-projects', component: MyProjectsComponent},
+  {path: 'about-me', component: AboutMeComponent},
+  {path: 'my-projects', component: MyProjectsComponent},
 ];

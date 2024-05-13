@@ -1,15 +1,12 @@
 import { Component } from '@angular/core';
-import {MatCardModule} from '@angular/material/card'
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatButtonModule} from '@angular/material/button';
 @Component({
   selector: 'app-about-me',
   templateUrl: './about-me.component.html',
-styleUrls: ['./about-me.component.css'],
-  standalone: true,
-  imports: [MatCardModule, MatGridListModule, MatButtonModule]
+  styleUrl: './about-me.component.css',
 })
 export class AboutMeComponent {
+  showAboutMeCard = true;
+
   //text for the about me card
   aboutMeText = `I appreciate you taking the time to learn more about me. My name is Valencia,
 but I prefer V or Wolf. My pronouns are she/her and they/them. I received my
@@ -23,10 +20,15 @@ the opportunity to mentor Jr. QA Engineers, and I'm never afraid to ask for help
 or clarification when I need it.`;
 
 //text for the my philosophy card
-myPhilosophyText = `In my QA philosophy, I emphasize integrating quality measures from the project's outset. 
+myPhilosophyText = `In my QA philosophy, I emphasize integrating quality measures from the project's outset.
 It's not just about defect identification but active prevention through early collaboration, comprehensive
 testing strategies, and adaptability. I advocate for a holistic approach, encompassing manual and automated
-testing, performance testing, and clear documentation. Collaboration and open communication are crucial, 
-fostering a quality-driven culture across teams. Quality, to me, is not just defect absence but a reflection 
+testing, performance testing, and clear documentation. Collaboration and open communication are crucial,
+fostering a quality-driven culture across teams. Quality, to me, is not just defect absence but a reflection
 of a well-crafted, user-centric solution.`;
+
+
+  toggleCards() {
+    this.showAboutMeCard = !this.showAboutMeCard;
+  }
 }

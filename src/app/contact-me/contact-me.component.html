@@ -20,6 +20,9 @@
       <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
     </button>
   </div>
-  <div id="pigeon-message" class="center" *ngIf="isVisible">
-    The carrier pigeon feature is still being figured out so I suggest using LinkedIn or Email to reach me. Thank you for taking the time to check things out though!
-  </div>
+  @if(isVisible){
+    <div id="pigeon-message" class="center">
+      The carrier pigeon feature is still being figured out so I suggest using LinkedIn or Email to reach me. Thank you for
+      taking the time to check things out though!
+    </div>
+  }

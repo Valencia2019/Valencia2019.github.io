@@ -1,7 +1,7 @@
 .about-me-card{
   margin-top: 10px;
   max-width: 60vh;
-  max-height: 50vh;
+  max-height: 55vh;
   background-color: rgb(211, 247, 249);
 }
 
@@ -15,7 +15,7 @@
 mat-card img {
   object-fit: cover;
   /*this makes the image in src fit to the size specified below*/
-  width: 25%;
+  max-width: 25%;
 }
 
 .header-img {
@@ -24,5 +24,17 @@ mat-card img {
 }
 
 button, p, mat-card-subtitle {
-  margin: 5px;
+  margin: 2px;
+}
+
+@media (max-width: 600px) {
+  .shrinkable-content {
+    flex-shrink: 1;
+    flex-basis: 100%;
+  }
+
+  .shrinkable-actions {
+    flex-shrink: 1;
+    flex-basis: 100%;
+  }
 }

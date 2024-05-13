@@ -1,8 +1,13 @@
 import { Component } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatTooltipModule } from '@angular/material/tooltip';
 @Component({
   selector: 'app-about-me',
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.css',
+  standalone: true,
+  imports: [MatCardModule, MatTooltipModule, MatButtonModule]
 })
 export class AboutMeComponent {
   showAboutMeCard = true;

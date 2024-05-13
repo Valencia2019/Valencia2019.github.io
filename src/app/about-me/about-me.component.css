@@ -1,23 +1,28 @@
 .about-me-card{
-  max-width: 50%;
-  float: left;
-  margin-right: 10px;
+  margin-top: 10px;
+  max-width: 60vh;
+  max-height: 50vh;
+  background-color: rgb(211, 247, 249);
 }
-#about-me-img{
-  float: left;
-  max-width: 50%;
-  padding-right: 5px;
+
+.my-philosophy-card{
+  margin-top: 10px;
+  max-width: 60vh;
+  max-height: 50vh;
+  background-color: rgb(214, 249, 211);
+}
+
+mat-card img {
+  object-fit: cover;
+  /*this makes the image in src fit to the size specified below*/
+  width: 25%;
 }
 
 .header-img {
-  background-image: url('src\assets\profilepic1.jpeg');
+  background-image: url('src\assets\profilepic2.jpeg');
   background-size: cover;
 }
 
-button, p {
+button, p, mat-card-subtitle {
   margin: 5px;
-}
-
-p{
-  text-align: justify;
 }

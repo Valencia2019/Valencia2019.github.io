@@ -1,31 +1,47 @@
-<mat-card class="about-me-card" id="about-me-card">
+@if(showAboutMeCard){
+  <mat-card #aboutMeCard class="about-me-card">
   <mat-card-header>
-    <div mat-card-avatar class="header-img"></div>
-    <mat-card-title>The basics</mat-card-title>
-    <mat-card-subtitle>My bio</mat-card-subtitle>
+
+    <mat-card-title-group>
+      <mat-card-title>Valencia at a glance</mat-card-title>
+      <mat-card-subtitle>These are the basics about me, which includes a short bio, my resume, and LinkedIn profile.</mat-card-subtitle>
+      <img mat-card-lg-image src="..\assets\profilepic2.jpeg" alt="Photo of Valencia">
+    </mat-card-title-group>
   </mat-card-header>
+
   <mat-card-content>
-    <img id="about-me-img" src="..\assets\profilepic2.jpeg" alt="Photo of Valencia">
     <p>
       {{aboutMeText}}
     </p>
   </mat-card-content>
-</mat-card>
-<mat-card class="my-philosophy-card" id="my-philosophy-card">
-  <mat-card-header>
-    <div mat-card-avatar class="header-img"></div>
-    <mat-card-title>My QA Philosophy</mat-card-title>
-    <mat-card-subtitle>How I approach work</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <p>
-      {{myPhilosophyText}}
-    </p>
-  </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button><a href="https://www.linkedin.com/in/valenciamcm/" target="_blank" tabindex="0">
-      <span>My LinkedIn</span>
+    <button matTooltip="Clicking this button will open a my LinkedIn profile in a new tab" mat-raised-button><a href="https://www.linkedin.com/in/valenciamcm/" target="_blank" tabindex="0">
+      <span>My LinkedIn Profile</span>
     </a></button>
-    <button mat-raised-button><a href="..\assets\resume.pdf" target="_blank"><span>My Resume</span></a></button>
+    <button matTooltip="Clicking this button will open my resume in a new tab " mat-raised-button><a href="..\assets\Resume Latest.pdf" target="_blank"><span>My resume</span></a></button>
+    <button matTooltip="Clicking this button will go to my philosophy card" mat-raised-button (click)="toggleCards()">Next</button>
   </mat-card-actions>
-</mat-card>
+</mat-card>}
+
+@else {
+  <mat-card #myPhilosophyCard class="my-philosophy-card">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>Valencia's QA Philosophy</mat-card-title>
+        <mat-card-subtitle >Here's some general information about my QA philosophy</mat-card-subtitle>
+        <img mat-card-lg-image src="..\assets\profilepic1.jpeg" alt="Photo of Valencia">
+      </mat-card-title-group>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>
+        {{myPhilosophyText}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button matTooltip="Clicking this button will go back to the about me card" mat-raised-button
+        (click)="toggleCards()">Previous</button>
+    </mat-card-actions>
+  </mat-card>
+
+}

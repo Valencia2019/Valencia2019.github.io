@@ -18,10 +18,7 @@ import { MyProjectsComponent } from './my-projects/my-projects.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ContactMeComponent,
-    AboutMeComponent,
-
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +31,9 @@ import { MyProjectsComponent } from './my-projects/my-projects.component';
     MatTooltipModule,
     MatCardModule,
     MatGridListModule,
-    MyProjectsComponent
+    MyProjectsComponent,
+    AboutMeComponent,
+    ContactMeComponent
   ],
   providers: [provideRouter(routes)],
   bootstrap: [AppComponent]

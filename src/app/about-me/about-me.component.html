@@ -9,12 +9,12 @@
     </mat-card-title-group>
   </mat-card-header>
 
-  <mat-card-content>
+  <mat-card-content class="shrinkable-content">
     <p>
       {{aboutMeText}}
     </p>
   </mat-card-content>
-  <mat-card-actions>
+  <mat-card-actions class="shrinkable-actions">
     <button matTooltip="Clicking this button will open a my LinkedIn profile in a new tab" mat-raised-button><a href="https://www.linkedin.com/in/valenciamcm/" target="_blank" tabindex="0">
       <span>My LinkedIn Profile</span>
     </a></button>
@@ -33,12 +33,12 @@
       </mat-card-title-group>
     </mat-card-header>
 
-    <mat-card-content>
+    <mat-card-content class="shrinkable-content">
       <p>
         {{myPhilosophyText}}
       </p>
     </mat-card-content>
-    <mat-card-actions>
+    <mat-card-actions class="shrinkable-actions">
       <button matTooltip="Clicking this button will go back to the about me card" mat-raised-button
         (click)="toggleCards()">Previous</button>
     </mat-card-actions>

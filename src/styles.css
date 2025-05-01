@@ -133,8 +133,8 @@ a,
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #1976d2;
-    color: white;
+    color: rgb(28, 199, 208);
+    opacity: 0.8;
     font-weight: 600;
   }
 

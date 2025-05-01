@@ -1,27 +1,18 @@
 <div class="content" role="main">
-  <!-- Options -->
-  <mat-card class="welcome-card">
-    <mat-card-header>
-      <mat-card-title>Welcome to my portfolio!</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p>Use the links below to learn more about me, see my resume and examples of my code.</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="primary" routerLink="/" tabindex="0">
-        <mat-icon>info</mat-icon>
-        <span>About me</span>
-      </button>
-      <button mat-raised-button color="accent" routerLink="/my-projects" tabindex="1">
-        <mat-icon>folder_open</mat-icon>
-        <span>My projects</span>
-      </button>
-      <button mat-raised-button color="warn" routerLink="/contact-me" tabindex="2">
-        <mat-icon>contacts</mat-icon>
-        <span>Contact Me</span>
-      </button>
-    </mat-card-actions>
-  </mat-card>
-  <router-outlet></router-outlet>
-</div>
+  <mat-toolbar class="toolbar">
+    <a mat-button routerLink="/"><h3>Welcome to My Portfolio</h3></a>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/about-me">
+      <span>About me</span>
+    </button>
+    <button mat-button routerLink="/my-projects">
+      <span>My projects</span>
+    </button>
+    <button mat-button routerLink="/contact-me">
+      <mat-icon>contacts</mat-icon>
+      <span>Contact Me</span>
+    </button>
+  </mat-toolbar>
 
+  <router-outlet class="router-outlet"></router-outlet>
+</div>

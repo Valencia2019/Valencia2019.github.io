@@ -1,70 +1,47 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { CalendlyModal } from "@/components/CalendlyModal";
+import { Metadata } from 'next';
 
-export default function Contact() {
+export const metadata: Metadata = {
+  title: 'Contact | Valencia McMurray',
+  description: 'Reach out to collaborate or schedule a consulting session.',
+};
+
+export default function ContactPage() {
   return (
-    <div>
+    <main className="min-h-screen bg-black text-white flex flex-col items-center px-4 py-16 space-y-12 mt-20">
       <Navbar />
-      <div className="container mx-auto p-4 pt-6 mt-20">
-        <h2 className="center">Next Steps</h2>
-        <p className="center">
-          Where do we go from here? Seems, obvious, right? There are a few options for contacting me:
+      <div className="max-w-2xl text-center space-y-6">
+        <h1 className="text-4xl font-bold text-white">Contact Me</h1>
+        <p className="text-gray-400">
+          I'm currently available for freelance QA consulting or dev work.
+          Feel free to reach out via email, connect on LinkedIn, or schedule a call.
         </p>
-        <div className="card-container">
+
+        <div className="flex flex-col items-center space-y-4 text-lg">
           <a
-            className="card"
+            href="mailto:valencia.mcmurray@gmail.com"
+            className="text-accent hover:underline transition"
+          >
+            valencia.mcmurray@gmail.com
+          </a>
+          <a
             href="https://www.linkedin.com/in/valenciamcm/"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
+            className="text-accent hover:underline transition"
           >
-            <span className="material-symbols-outlined">forum</span>
-            <span>Via LinkedIn</span>
-            <svg
-              className="material-icons"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-            </svg>
+            LinkedIn Profile
           </a>
-
-          <a
-            className="card"
-            href="mailto:valencia.mcmurray@gmail.com"
-            target="_blank"
-            rel="noopener"
-          >
-            <span className="material-symbols-outlined">send</span>
-            <span>Via Email</span>
-            <svg
-              className="material-icons"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-            </svg>
-          </a>
-
-          <button className="card">
-            <span className="material-symbols-outlined">flutter_dash</span>
-            <span>Via Messenger pigeon</span>
-            <svg
-              className="material-icons"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-            </svg>
-          </button>
         </div>
       </div>
+
+      <div className="w-full max-w-3xl border-t border-white/10 pt-12 flex justify-center">
+        <CalendlyModal />
+      </div>
+
       <Footer />
-    </div>
+    </main>
   );
 }

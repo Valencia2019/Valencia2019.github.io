@@ -40,9 +40,6 @@ export const Navbar = () => {
               <Link href="/projects" className="text-white px-3 py-2 rounded-md text-sm font-medium hover:underline">
                 Projects
               </Link>
-              <Link href="/resume" className="text-white px-3 py-2 rounded-md text-sm font-medium hover:underline">
-                Resume
-              </Link>
             </div>
           </div>
         </div>

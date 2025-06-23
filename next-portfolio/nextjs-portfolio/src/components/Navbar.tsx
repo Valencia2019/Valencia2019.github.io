@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 export const Navbar = () => {
@@ -24,7 +25,24 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           <div className="flex items-center">
-            <span className="text-white text-lg font-bold">Valencia McMurray</span>
+            <video
+                className="h-16 w-16 object-contain"
+                data-testid="logo"
+                playsInline
+                autoPlay
+                muted
+                loop
+              >
+                <source src="/animated-logo.mp4" type="video/mp4" />
+                <Image
+                  src="/static-logo.jpg"
+                  alt="static logo"
+                  className="h-16 w-16"
+                  width={64}
+                  height={64}
+                />
+              </video>
+
           </div>
           <div className="flex-1 flex items-center justify-end">
             <div className="flex space-x-4">

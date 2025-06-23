@@ -6,7 +6,7 @@ export const ProjectCard = ({ title, tech, github, demo, description }: {
   description: string;
 }) => {
   return (
-    <article className="bg-black border border-accent border-opacity-10 rounded-lg transition-all hover:scale-105 hover:border-opacity-100">
+    <article className="bg-black border border-accent border-opacity-10 rounded-lg transition-all hover:scale-105 hover:border-opacity-100" data-testid="project-card">
       <header className="p-6">
         <h3 className="text-white text-2xl font-bold">{title}</h3>
         <p className="mt-2 text-sm text-white opacity-80">{tech}</p>

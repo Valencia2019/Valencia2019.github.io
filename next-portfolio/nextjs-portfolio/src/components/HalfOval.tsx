@@ -33,7 +33,7 @@ export const HalfOval: React.FC<HalfOvalProps> = ({ accentColor, content }) => {
 
       {content?.text && (
         <div className="w-full h-full flex items-center justify-center bg-white" data-testid="half-oval-text">
-          <p className="text-center text-black text-lg px-4">{content.text}</p>
+          <span className="text-center text-black text-lg px-4">{content.text}</span>
         </div>
       )}
     </motion.div>

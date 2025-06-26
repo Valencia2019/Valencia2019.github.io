@@ -4,12 +4,25 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { CalendlyModal } from "@/components/CalendlyModal";
 import { HalfOval } from "@/components/HalfOval";
+import { useSearchParams } from 'next/navigation';
+import { useEffect } from 'react';
+
 
 const MYEMAIL = "valencia.mcmurray@gmail.com";
 const LINKEDINLINK = "https://linkedin.com/in/valenciamcm";
 
 export default function ContactPage() {
   const [showContactInfo, setShowContactInfo] = useState(false);
+  const searchParams = useSearchParams();
+  const shouldSchedule = searchParams.get('schedule') === 'true';
+  const [openCalendly, setOpenCalendly] = useState(false);
+
+  useEffect(() => {
+    if (shouldSchedule) {
+      setOpenCalendly(true);
+      setShowContactInfo(true);
+    }
+  }, [shouldSchedule]);
 
   const toggleContactInfo = () => {
     setShowContactInfo(!showContactInfo);
@@ -53,7 +66,7 @@ export default function ContactPage() {
           <div id="contact-info" className={`mt-8 ${showContactInfo ? 'block' : 'hidden'}`}>
 
           <div className="pt-6">
-            <CalendlyModal buttonColor="white" buttonTextColor="black" data-testid="calendly-modal-left" />
+            <CalendlyModal buttonColor="white" buttonTextColor="black" data-testid="calendly-modal-left" autoOpen={openCalendly} />
           </div>
           </div>
         </div>

@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import { Inter, Fira_Code } from "next/font/google";
+import { Sriracha, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+// Body font
+const sriracha = Sriracha({
   subsets: ["latin"],
-  variable: "--font-inter",
-});
+  variable: "--font-sriracha",
+  weight: ["400"],
+})
 
-const fira = Fira_Code({
+// Header font
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-fira",
+  variable: "--font-playfair",
 });
 
 export const metadata: Metadata = {
@@ -23,10 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${inter.variable} ${fira.variable} antialiased`}
-      >
+    <html lang="en" className={`${sriracha.variable} ${playfair.variable}`}>
+      <body className="font-sriracha antialiased">
         {children}
       </body>
     </html>

@@ -46,17 +46,17 @@ export const Navbar = () => {
           </div>
           <div className="flex-1 flex items-center justify-end">
             <div className="flex space-x-4">
-              <Link href="/" className="text-white px-3 py-2 rounded-md text-sm font-medium hover:underline">
-                Home
+              <Link href="/" className="text-white px-3 py-2 rounded-md text-md font-medium hover:underline" data-testid="home-link">
+                <h1>Home</h1>
               </Link>
-              <Link href="/contact" className="text-white px-3 py-2 rounded-md text-sm font-medium hover:underline">
-                Contact
+              <Link href="/contact" className="text-white px-3 py-2 rounded-md text-md font-medium hover:underline" data-testid="contact-link">
+                <h1>Contact</h1>
               </Link>
-              <Link href="/freelance" className="text-white px-3 py-2 rounded-md text-sm font-medium hover:underline">
-                Freelance
+              <Link href="/freelance" className="text-white px-3 py-2 rounded-md text-md font-medium hover:underline" data-testid="freelance-link">
+                <h1>Freelance</h1>
               </Link>
-              <Link href="/projects" className="text-white px-3 py-2 rounded-md text-sm font-medium hover:underline">
-                Projects
+              <Link href="/projects" className="text-white px-3 py-2 rounded-md text-md font-medium hover:underline" data-testid="projects-link">
+                <h1>Projects</h1>
               </Link>
             </div>
           </div>

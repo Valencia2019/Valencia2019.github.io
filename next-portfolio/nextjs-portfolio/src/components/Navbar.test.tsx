@@ -30,10 +30,10 @@ describe('Validating the Navbar component', () => {
   it('renders all nav links', () => {
     render(<Navbar />);
     
-    expect(screen.getByRole('link', { name: /home/i })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /contact/i })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /freelance/i })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /projects/i })).toBeInTheDocument();
+    expect(screen.getByTestId('home-link')).toBeInTheDocument();
+    expect(screen.getByTestId('contact-link')).toBeInTheDocument();
+    expect(screen.getByTestId('freelance-link')).toBeInTheDocument();
+    expect(screen.getByTestId('projects-link')).toBeInTheDocument();
   });
 
   it('adds a shadow class when scrolling down', () => {

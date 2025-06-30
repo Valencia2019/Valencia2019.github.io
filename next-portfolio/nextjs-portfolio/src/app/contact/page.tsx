@@ -14,7 +14,7 @@ const LINKEDINLINK = "https://linkedin.com/in/valenciamcm";
 export default function ContactPage() {
   const [showContactInfo, setShowContactInfo] = useState(false);
   const searchParams = useSearchParams();
-  const shouldSchedule = searchParams.get('schedule') === 'true';
+  const shouldSchedule = searchParams?.get('schedule') === 'true';
   const [openCalendly, setOpenCalendly] = useState(false);
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function ContactPage() {
           </p>
 
               <div className="mt-8 p-6 bg-white/5 border border-white/10 rounded-lg text-sm text-white space-y-4">
-                <h2 className="text-lg font-semibold text-teal-400">📋 Before You Reach Out</h2>
+                <h2 className="text-lg font-semibold text-lime-400">📋 Before You Reach Out</h2>
                 <p>To help us make the most of our time, please include the following in your message or be ready to discuss them during our call:</p>
                 <ul className="list-disc list-inside space-y-1 text-white/90">
                   <li>Your name, company, and role</li>
@@ -73,7 +73,7 @@ export default function ContactPage() {
 
         {/* Right Column - Half Oval */}
         <div className="flex-1 flex justify-center items-start">
-          <HalfOval accentColor="#14B8A6"
+          <HalfOval accentColor="oklch(89.7% 0.196 126.665)"
               content={{
                 text: showContactInfo ? (
                   <div className="text-sm space-y-2 text-black text-center">

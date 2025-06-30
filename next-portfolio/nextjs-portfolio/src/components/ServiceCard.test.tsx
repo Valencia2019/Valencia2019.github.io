@@ -2,16 +2,24 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { ServiceCard } from './ServiceCard';
 
+jest.mock('next/navigation', () => ({
+  useRouter: () => ({
+    push: jest.fn(),
+    replace: jest.fn(),
+    pathname: '/',
+  }),
+}));
+
 describe('Validating the ServiceCard component', () => {
   const mockProps = {
     key: 1,
     title: 'QA Automation Audit',
     description: 'An in-depth review of your test framework and strategies.',
-    cost: '$999',
+    cost: '999',
   };
 
   beforeEach(() => {
-    render(<ServiceCard {...mockProps} />);
+    render(<ServiceCard  title={mockProps.title} description={mockProps.description} cost={mockProps.cost} />);
   });
 
   it('renders the service title', () => {
@@ -23,7 +31,7 @@ describe('Validating the ServiceCard component', () => {
   });
 
   it('renders the cost', () => {
-    expect(screen.getByText(mockProps.cost)).toBeInTheDocument();
+    expect(screen.getByText(`Cost $${mockProps.cost}`)).toBeInTheDocument();
   });
 
   it('renders the TestCafe icon', () => {

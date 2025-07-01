@@ -29,7 +29,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, co
       </header>
 
       <p className="mt-4 text-sm text-white opacity-80" data-testid={`description-${title}`}>{description}</p>
-      <p className="mt-4 text-md text-white" data-testid={`cost-${title}`}>Cost ${cost}</p>
+      <p className="mt-4 text-md text-white" data-testid={`cost-${title}`}>Starting at ${cost}</p>
 
       <div className="flex gap-4 mt-6">
         <a href={mailtoLink}

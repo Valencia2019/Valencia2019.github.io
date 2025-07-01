@@ -31,7 +31,7 @@ describe('Validating the ServiceCard component', () => {
   });
 
   it('renders the cost', () => {
-    expect(screen.getByText(`Cost $${mockProps.cost}`)).toBeInTheDocument();
+    expect(screen.getByText(`Starting at $${mockProps.cost}`)).toBeInTheDocument();
   });
 
   it('renders the TestCafe icon', () => {

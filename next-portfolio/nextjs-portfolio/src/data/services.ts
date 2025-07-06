@@ -66,7 +66,7 @@ export const services: Service[] = [
     description: "Custom scripts, dashboards, or automation support tools.",
     cost: "1000+",
     category: "QA",
-    subCategory: "Tooling",
+    subCategory: "Automated Testing",
   },
   {
     title: "Team Training",

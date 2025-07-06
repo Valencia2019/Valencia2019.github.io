@@ -11,7 +11,7 @@ export default function FreelancePage() {
 
       <main className="container max-w-4xl mx-auto px-6 py-24 mt-20 space-y-16 flex flex-row">
         <div className="flex-1 md:flex-initial md:w-1/3 md:pr-8 mr-8">
-          <HalfOval accentColor="#14B8A6"
+          <HalfOval accentColor="#8B5CF6"
             content={{
               text: "I'm currently available for freelance QA consulting or dev work. Feel free to reach out via email, connect on LinkedIn, or schedule a call.",
             }}
@@ -33,7 +33,7 @@ export default function FreelancePage() {
               action={
                 <Link
                   href="/contact"
-                  className="text-teal-400 hover:underline text-sm"
+                  className="text-indigo-400 hover:underline text-sm"
                 >
                   Send Inquiry
                 </Link>
@@ -47,7 +47,7 @@ export default function FreelancePage() {
               action={
                 <Link
                   href="/contact?schedule=true"
-                  className="text-teal-400 hover:underline text-sm"
+                  className="text-indigo-400 hover:underline text-sm"
                 >
                   Schedule via Calendly
                 </Link>
@@ -85,7 +85,7 @@ export default function FreelancePage() {
             </p>
             <Link
               href="/freelance/services"
-              className="text-teal-400 underline mt-2 inline-block"
+              className="text-indigo-400 underline mt-2 inline-block"
             >
               View My QA & Web Development Services →
             </Link>
@@ -111,7 +111,7 @@ function Step({
 }) {
   return (
     <div className="flex gap-6">
-      <div className="text-teal-400 font-bold text-xl min-w-[32px]">{step}</div>
+      <div className="text-indigo-400 font-bold text-xl min-w-[32px]">{step}</div>
       <div>
         <h2 className="text-xl font-semibold mb-1">{title}</h2>
         <p className="text-gray-300 mb-2">{description}</p>

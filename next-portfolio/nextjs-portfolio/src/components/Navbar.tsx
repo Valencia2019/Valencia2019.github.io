@@ -47,7 +47,7 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className={`bg-black ${shadow ? 'shadow-lg' : ''} fixed w-full z-10 top-0`}>
+    <nav className={`bg-black ${shadow ? 'shadow-lg' : ''} fixed w-full z-10 top-0`} data-testid="navbar">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -107,6 +107,7 @@ export const Navbar = () => {
                         className="absolute left-0 mt-2 w-48 bg-black rounded-md shadow-lg z-50"
                         role="menu"
                         id="freelance-menu"
+                        data-testid="freelance-menu"
                       >
                         <Link
                           href="/freelance"

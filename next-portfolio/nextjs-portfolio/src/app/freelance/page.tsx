@@ -22,7 +22,7 @@ export default function FreelancePage() {
             </p>
           </section>
 
-          <section className="space-y-8">
+          <section className="space-y-8" data-testid="steps">
             <Step
               step="1"
               title="Send an Inquiry"

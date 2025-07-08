@@ -1,14 +1,21 @@
+import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from "@testing-library/react";
 import { ServicesMenu } from "@/components/ServicesMenu";
 import { Service } from "@/data/services";
 
 const mockCategories: Record<string, Record<string, Service[]>> = {
   QA: {
-    "Manual Testing": [],
-    "Automated Testing": [],
+    "Manual Testing": [
+      { title: "Service 1", description: "Desc", cost: "TBD", category: "QA", subCategory: "Manual Testing" },
+    ],
+    "Automated Testing": [
+      { title: "Service 3", description: "Desc", cost: "TBD", category: "QA", subCategory: "Automated Testing" },
+    ],
   },
   Development: {
-    "Web Development": [],
+    "Web Development": [
+      { title: "Service 4", description: "Desc", cost: "TBD", category: "Development", subCategory: "Web Development" },
+    ],
   },
 };
 
@@ -19,7 +26,7 @@ describe("ServicesMenu", () => {
     mockOnSelect.mockClear();
   });
 
-  it("renders all categories and subcategories", () => {
+  it("renders all categories and subcategory buttons", () => {
     render(
       <ServicesMenu
         categories={mockCategories}
@@ -29,17 +36,17 @@ describe("ServicesMenu", () => {
       />
     );
 
-    // Top-level category headers
-    expect(screen.getByText("QA")).toBeInTheDocument();
-    expect(screen.getByText("Development")).toBeInTheDocument();
+    // Category headings
+    expect(screen.getByTestId("category-QA")).toBeInTheDocument();
+    expect(screen.getByTestId("category-Development")).toBeInTheDocument();
 
-    // Subcategories
-    expect(screen.getByText("Manual Testing")).toBeInTheDocument();
-    expect(screen.getByText("Automated Testing")).toBeInTheDocument();
-    expect(screen.getByText("Web Development")).toBeInTheDocument();
+    // Subcategory buttons
+    expect(screen.getByTestId("service-Manual Testing")).toBeInTheDocument();
+    expect(screen.getByTestId("service-Automated Testing")).toBeInTheDocument();
+    expect(screen.getByTestId("service-Web Development")).toBeInTheDocument();
   });
 
-  it("highlights the selected subcategory button", () => {
+  it("highlights the selected subcategory correctly", () => {
     render(
       <ServicesMenu
         categories={mockCategories}
@@ -49,9 +56,11 @@ describe("ServicesMenu", () => {
       />
     );
 
-    const selectedButton = screen.getByText("Automated Testing");
-    expect(selectedButton).toHaveClass("bg-white");
-    expect(selectedButton).toHaveClass("text-black");
+    const selectedBtn = screen.getByTestId("service-Automated Testing");
+
+    expect(selectedBtn).toHaveClass("bg-white");
+    expect(selectedBtn).toHaveClass("text-black");
+    expect(selectedBtn).toHaveClass("font-semibold");
   });
 
   it("calls onSelect when a subcategory is clicked", () => {
@@ -64,9 +73,9 @@ describe("ServicesMenu", () => {
       />
     );
 
-    const button = screen.getByText("Web Development");
-    fireEvent.click(button);
+    const targetButton = screen.getByTestId("service-Automated Testing");
+    fireEvent.click(targetButton);
 
-    expect(mockOnSelect).toHaveBeenCalledWith("Development", "Web Development");
+    expect(mockOnSelect).toHaveBeenCalledWith("QA", "Automated Testing");
   });
 });

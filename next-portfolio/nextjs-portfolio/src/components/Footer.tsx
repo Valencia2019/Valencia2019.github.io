@@ -1,7 +1,7 @@
 import { FaGithub as Github, FaLinkedin as Linkedin } from "react-icons/fa";
 export const Footer = () => {
   return (
-    <footer className="flex h-24 w-full items-center justify-center border-t mt-12">
+    <footer className="flex h-24 w-full items-center justify-center border-t mt-12" data-testid="footer">
       <div className="flex flex-col items-center justify-center gap-2">
         <p className="text-sm text-gray-600">
           &copy; {new Date().getFullYear()} Valencia McMurray

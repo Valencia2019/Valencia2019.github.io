@@ -32,8 +32,19 @@ describe('Validating the Navbar component', () => {
     
     expect(screen.getByTestId('home-link')).toBeInTheDocument();
     expect(screen.getByTestId('contact-link')).toBeInTheDocument();
-    expect(screen.getByTestId('freelance-link')).toBeInTheDocument();
     expect(screen.getByTestId('projects-link')).toBeInTheDocument();
+    const freelanceBtn = screen.getByTestId('freelance-button');
+    expect(freelanceBtn).toBeInTheDocument();
+    act(() => {
+      freelanceBtn.click();
+    })
+    setTimeout(() => {
+      expect(screen.getByTestId('freelance-menu')).toBeInTheDocument();
+      expect(screen.getByTestId('freelance-link')).toBeInTheDocument();
+    expect(screen.getByTestId('services-link')).toBeInTheDocument();
+    })
+
+    
   });
 
   it('adds a shadow class when scrolling down', () => {

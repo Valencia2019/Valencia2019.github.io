@@ -5,10 +5,11 @@ import { ProjectCard } from './ProjectCard';
 describe('ProjectCard component', () => {
   const mockProps = {
     title: 'Test Project',
-    tech: 'React, TypeScript, Tailwind',
+    tech: ['React', 'TypeScript', 'Tailwind'],
     github: 'https://github.com/valencia/test-project',
     demo: 'https://test-project.vercel.app',
     description: 'A demo project for testing purposes',
+    imageSrc: ''
   };
 
   beforeEach(() => {
@@ -20,7 +21,9 @@ describe('ProjectCard component', () => {
   });
 
   it('renders the tech stack', () => {
-    expect(screen.getByText(mockProps.tech)).toBeInTheDocument();
+    mockProps.tech.forEach((tech) => {
+      expect(screen.getByText(tech)).toBeInTheDocument();
+    });
   });
 
   it('renders the description', () => {
@@ -28,7 +31,7 @@ describe('ProjectCard component', () => {
   });
 
   it('has a GitHub link with correct href', () => {
-    const githubLink = screen.getByRole('link', { name: /view on github/i });
+    const githubLink = screen.getByRole('link', { name: /GitHub/i });
     expect(githubLink).toBeInTheDocument();
     expect(githubLink).toHaveAttribute('href', mockProps.github);
     expect(githubLink).toHaveAttribute('target', '_blank');

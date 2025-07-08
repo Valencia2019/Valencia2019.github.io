@@ -2,12 +2,6 @@ import { render, screen } from '@testing-library/react';
 import Home from './page';
 import '@testing-library/jest-dom';
 
-jest.mock('@/components/Navbar', () => ({
-  Navbar: () => <div data-testid="navbar" />,
-}));
-jest.mock('@/components/Footer', () => ({
-  Footer: () => <div data-testid="footer" />,
-}));
 jest.mock('@/components/HalfOval', () => ({
   HalfOval: () => <div data-testid="half-oval" />,
 }));
@@ -25,10 +19,8 @@ describe('Home Page', () => {
     expect(screen.getByText(/hire me/i)).toBeInTheDocument();
   });
 
-  it('renders HalfOval and layout components', () => {
+  it('renders HalfOval components', () => {
     render(<Home />);
-    expect(screen.getByTestId('navbar')).toBeInTheDocument();
-    expect(screen.getByTestId('footer')).toBeInTheDocument();
     expect(screen.getByTestId('half-oval')).toBeInTheDocument();
   });
 

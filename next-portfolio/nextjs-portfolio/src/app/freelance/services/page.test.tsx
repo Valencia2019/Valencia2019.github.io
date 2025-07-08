@@ -52,8 +52,8 @@ describe("Validating the Services Page", () => {
       (s) => s.category === "QA" && s.subCategory === "Manual Testing"
     );
     services.slice(0, 3).forEach((service) => {
-      const h3 = screen.getByRole("heading", { name: service.title, level: 3 });
-      expect(h3).toBeInTheDocument();
+      const title = screen.getByText(service.title);
+      expect(title).toBeInTheDocument();
     });
   });
 

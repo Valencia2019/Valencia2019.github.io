@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Sriracha, Playfair_Display } from "next/font/google";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import "./globals.css";
 
 // Body font
@@ -16,7 +18,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
+  title: "My Portfolio Home | Valencia McMurray",
   description: "This is my portfolio",
 };
 
@@ -28,7 +30,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${sriracha.variable} ${playfair.variable}`}>
       <body className="font-sriracha antialiased">
-        {children}
+        <Navbar />
+        <main className="min-h-screen pt-20">{children}</main>
+        <Footer />
       </body>
     </html>
   );

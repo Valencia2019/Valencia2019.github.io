@@ -75,9 +75,6 @@ export const Navbar = () => {
               <Link href="/" className="text-white px-3 py-2 rounded-md text-md font-medium hover:text-gray-300 hover:underline" data-testid="home-link">
                 <h1>Home</h1>
               </Link>
-              <Link href="/contact" className="text-white px-3 py-2 rounded-md text-md font-medium hover:text-gray-300 hover:underline" data-testid="contact-link">
-                <h1>Contact</h1>
-              </Link>
               <div className="relative inline-block"
                     tabIndex={0}
                     onBlur={(e) => {
@@ -130,6 +127,9 @@ export const Navbar = () => {
                   </div>
               <Link href="/projects" className="text-white px-3 py-2 rounded-md text-md font-medium hover:text-gray-300 hover:underline" data-testid="projects-link">
                 <h1>Projects</h1>
+              </Link>
+              <Link href="/contact" className="text-white px-3 py-2 rounded-md text-md font-medium hover:text-gray-300 hover:underline" data-testid="contact-link">
+                <h1>Contact</h1>
               </Link>
             </div>
           </div>

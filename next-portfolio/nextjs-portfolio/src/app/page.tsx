@@ -1,11 +1,9 @@
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+
 import { HalfOval } from "@/components/HalfOval";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
 
       <main  className="flex-grow">
         <h1 className="text-6xl font-bold text-center mb-12">Welcome to my Portfolio</h1>
@@ -41,8 +39,6 @@ export default function Home() {
           <a href="/contact" className="bg-white px-4 py-2 rounded-md text-black">Hire Me</a>
         </div>
       </main >
-
-      <Footer />
     </div>
   );
 }

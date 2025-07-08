@@ -1,7 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
 import { CalendlyModal } from "@/components/CalendlyModal";
 import { HalfOval } from "@/components/HalfOval";
 import { useSearchParams } from 'next/navigation';
@@ -31,8 +29,7 @@ export default function ContactPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-    <Navbar />
-    <main className="min-h-screen bg-black text-white flex flex-col items-center px-4 py-16 space-y-12 mt-20">
+    <main className="min-h-screen flex flex-col items-center">
       <div className="w-full flex flex-col md:flex-row items-start justify-center gap-16 max-w-6xl">
 
         {/* Left Column - Text and Links */}
@@ -109,7 +106,6 @@ export default function ContactPage() {
         </div>
       </div>
     </main>
-    <Footer />
     </div>
   );
 }

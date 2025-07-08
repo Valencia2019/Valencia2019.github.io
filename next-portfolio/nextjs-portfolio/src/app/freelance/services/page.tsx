@@ -1,8 +1,6 @@
 'use client';
 
 import { useState } from "react";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
 import { ServiceCard } from "@/components/ServiceCard";
 import { services } from "@/data/services";
 import { ServicesMenu } from "@/components/ServicesMenu";
@@ -29,9 +27,7 @@ export default function ServicesPage() {
   const visibleServices = filteredServices.slice(0, visibleCount);
 
   return (
-    <div className="bg-black text-white min-h-screen">
-      <Navbar />
-      <div className="flex flex-col md:flex-row gap-8 px-6 py-20 max-w-7xl mx-auto">
+      <div className="flex flex-col md:flex-row gap-8 max-w-7xl mx-auto min-h-screen">
         <ServicesMenu
           categories={grouped}
           selectedCategory={selectedCategory}
@@ -43,7 +39,7 @@ export default function ServicesPage() {
           }}
         />
 
-        <main className="flex-1 space-y-6 mt-10">
+        <main className="flex-grow">
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
             {visibleServices.map((service, index) => (
               <ServiceCard key={index} {...service} />
@@ -62,7 +58,5 @@ export default function ServicesPage() {
           )}
         </main>
       </div>
-      <Footer />
-    </div>
   );
 }

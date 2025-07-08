@@ -1,15 +1,12 @@
 'use client';
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
 import Link from "next/link";
 import { HalfOval } from "@/components/HalfOval";
 
 export default function FreelancePage() {
   return (
-    <div className="bg-black text-white min-h-screen">
-      <Navbar />
+    <div className="min-h-screen">
 
-      <main className="container max-w-4xl mx-auto px-6 py-24 mt-20 space-y-16 flex flex-row">
+      <main className="container max-w-4xl mx-auto flex flex-grow">
         <div className="flex-1 md:flex-initial md:w-1/3 md:pr-8 mr-8">
           <HalfOval accentColor="#8B5CF6"
             content={{
@@ -92,8 +89,6 @@ export default function FreelancePage() {
           </section>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }

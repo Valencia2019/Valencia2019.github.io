@@ -1,13 +1,17 @@
-# My Portfolio
-Welcome to my portfolio. It is being served at: [https://valencia2019.github.io/my-portfolio/](https://valencia2019.github.io/my-portfolio/)
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Getting Started
 
+First, run the development server:
 
-# To Run locally
-clone repo
-open project root
-in terminal run:
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
-npm i
-npm start
-```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

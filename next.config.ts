@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: isGithubPages ? '/Valencia2019.github.io' : '',
+  basePath: isGithubPages ? 'https://valencia2019.github.io/' : '',
   assetPrefix: isGithubPages ? '/Valencia2019.github.io/' : '',
 };
 

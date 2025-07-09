@@ -1,10 +1,9 @@
-name: Deploy to GitHub Pages
+name: Production Deployment to GitHub Pages
 
 on:
   push:
     branches:
       - main
-      - updates-3-4
 
 permissions:
   contents: read
@@ -38,9 +37,6 @@ jobs:
       - name: Run unit tests
         run: npm run test -- --ci
 
-      - name: Set GITHUB_PAGES env var
-        run: echo "GITHUB_PAGES=true" >> $GITHUB_ENV
-
       - name: Build site
         run: |
           npm run build
@@ -54,14 +50,10 @@ jobs:
   deploy:
     needs: build
 
-    permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
-
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-      
+
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages

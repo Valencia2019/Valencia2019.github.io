@@ -43,7 +43,7 @@ export const CalendlyModal = ({
 
             <div className="w-full h-[600px] mt-4">
               <iframe
-                src="https://calendly.com/valencia-mcmurray/30min"
+                src="https://calendly.com/valencia-mcmurray/general-intro-consultation"
                 width="100%"
                 height="100%"
                 data-testid="calendly-iframe"

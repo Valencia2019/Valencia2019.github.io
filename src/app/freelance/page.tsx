@@ -42,12 +42,7 @@ export default function FreelancePage() {
               title="Schedule a Call"
               description="We'll meet to talk through your needs in more detail. You can either use my Calendly link or I'll follow up to schedule a time that works."
               action={
-                <Link
-                  href="/contact?schedule=true"
-                  className="text-indigo-400 hover:underline text-sm"
-                >
-                  Schedule via Calendly
-                </Link>
+                <Link href="/contact#schedule">Schedule via Calendly</Link>
               }
             />
 

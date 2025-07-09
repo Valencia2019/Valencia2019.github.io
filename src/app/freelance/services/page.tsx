@@ -40,7 +40,7 @@ export default function ServicesPage() {
         />
 
         <main className="flex-grow">
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 mt-20">
             {visibleServices.map((service, index) => (
               <ServiceCard key={index} {...service} />
             ))}

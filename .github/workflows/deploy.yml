@@ -42,7 +42,9 @@ jobs:
         run: echo "GITHUB_PAGES=true" >> $GITHUB_ENV
 
       - name: Build site
-        run: npm run build
+        run: |
+          npm run build
+          touch out/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

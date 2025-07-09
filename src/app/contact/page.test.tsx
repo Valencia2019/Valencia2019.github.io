@@ -29,10 +29,10 @@ describe('ContactPage', () => {
 
   it('renders header and instructions, hides contact info initially', () => {
     expect(screen.getByText(/Contact Me/i)).toBeInTheDocument();
-    expect(screen.getByTestId('half-oval')).toHaveTextContent("Don’t hesitate to reach out!");
+    expect(screen.getByTestId('half-oval')).toHaveTextContent("Don't hesitate to reach out!");
     expect(screen.queryByTestId('email-link')).not.toBeInTheDocument();
     expect(screen.queryByTestId('linkedin-link')).not.toBeInTheDocument();
-    expect(screen.getByTestId('calendly-modal-left')).toBeInTheDocument(); // left section modal
+    expect(screen.queryByTestId('calendly-modal-left')).not.toBeInTheDocument(); // not shown yet
     expect(screen.queryByTestId('calendly-modal-oval')).not.toBeInTheDocument(); // not shown yet
   });
 
@@ -41,6 +41,7 @@ describe('ContactPage', () => {
     fireEvent.click(checkbox);
     waitFor(() => screen.getByTestId('email-link'));
 
+    expect(screen.getByTestId('calendly-modal-left')).toBeInTheDocument();
     expect(screen.getByTestId('email-link')).toBeInTheDocument();
     expect(screen.getByTestId('linkedin-link')).toBeInTheDocument();
     expect(screen.getByTestId('calendly-modal-oval')).toBeInTheDocument();

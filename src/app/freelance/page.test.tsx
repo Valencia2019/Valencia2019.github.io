@@ -45,7 +45,7 @@ describe("FreelancePage", () => {
     const servicesLink = screen.getByRole("link", { name: /view my qa & web development services/i });
 
     expect(inquiryLink).toHaveAttribute("href", "/contact");
-    expect(scheduleLink).toHaveAttribute("href", "/contact?schedule=true");
+    expect(scheduleLink).toHaveAttribute("href", "/contact#schedule");
     expect(servicesLink).toHaveAttribute("href", "/freelance/services");
   });
 

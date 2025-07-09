@@ -59,7 +59,7 @@ export const Navbar = () => {
                 muted
                 loop
               >
-                <source src="/animated-logo.mp4" type="video/mp4" />
+                <source src="/animated-logo.mp4" type="video/mp4" sizes='(max-width:64px) 64px, (max-width:128px) 128px' />
                 <Image
                   src="/static-logo.jpg"
                   alt="static logo"

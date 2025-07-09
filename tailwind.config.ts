@@ -1,16 +1,19 @@
  const config = {
-    content: ["./src/**/*.{js,ts,jsx,tsx}"],
+    content: [
+      "./app/**/*.{js,ts,jsx,tsx}",
+      "./components/**/*.{js,ts,jsx,tsx}",
+    ],
     theme: {
-  extend: {
-    colors: {
-      accent: '#8B5CF6',
+      extend: {
+        colors: {
+          accent: '#8B5CF6',
+        },
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+          mono: ['Fira Code', 'monospace'],
+        },
+      },
     },
-    fontFamily: {
-      sans: ['Inter', 'sans-serif'],
-      mono: ['Fira Code', 'monospace'],
-    },
-  },
-},
     plugins: [],
 }
 

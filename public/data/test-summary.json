@@ -1,0 +1,84 @@
+{
+  "summary": {
+    "totalTests": 8,
+    "passes": 8,
+    "failures": 0,
+    "duration": 16071,
+    "start": "2025-08-02T02:57:23.123Z",
+    "end": "2025-08-02T02:57:39.194Z"
+  },
+  "suites": [
+    {
+      "file": "cypress/accessibility/contact-list-logged-in.js",
+      "title": "Contact List App Accessibility checks Logged in",
+      "tests": [
+        {
+          "title": "A11y check of the Contact List Page",
+          "state": "passed",
+          "duration": 1134,
+          "error": null
+        },
+        {
+          "title": "A11y check of the Add Contact Page",
+          "state": "passed",
+          "duration": 1042,
+          "error": null
+        }
+      ]
+    },
+    {
+      "file": "cypress/accessibility/contact-list.js",
+      "title": "Contact List App Accessibility checks Not Logged in",
+      "tests": [
+        {
+          "title": "A11y check of the Login Page",
+          "state": "passed",
+          "duration": 343,
+          "error": null
+        },
+        {
+          "title": "A11y check of the Signup Page",
+          "state": "passed",
+          "duration": 316,
+          "error": null
+        }
+      ]
+    },
+    {
+      "file": "cypress/e2e/authentication.feature",
+      "title": "Contact List App Authentication",
+      "tests": [
+        {
+          "title": "Sign up for the Contact List App",
+          "state": "passed",
+          "duration": 1996,
+          "error": null
+        },
+        {
+          "title": "Sign into and then sign out of the Contact List App",
+          "state": "passed",
+          "duration": 1225,
+          "error": null
+        }
+      ]
+    },
+    {
+      "file": "cypress/e2e/contacts.feature",
+      "title": "Contact List App Contacts",
+      "tests": [
+        {
+          "title": "Add a contact",
+          "state": "passed",
+          "duration": 3259,
+          "error": null
+        },
+        {
+          "title": "Delete a contact",
+          "state": "passed",
+          "duration": 817,
+          "error": null
+        }
+      ]
+    }
+  ]
+}

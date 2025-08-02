@@ -41,7 +41,8 @@ export async function generateStaticParams() {
     }));
 }
 
-export default async function ReportPage({ params }: { params: { slug: string } }) {
+export default async function ReportPage(props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const filePath = path.join(process.cwd(), 'public/reports', `${params.slug}.json`);
 
   try {
@@ -49,7 +50,7 @@ export default async function ReportPage({ params }: { params: { slug: string } 
     const data: ReportData = JSON.parse(json);
 
     const { summary, suites } = data;
-    const projectName = params.slug.split('-').join(' ').toUpperCase();
+    const projectName = params.slug.split('-').join(' ');
 
     return (
       <div className="p-8 max-w-5xl mx-auto">

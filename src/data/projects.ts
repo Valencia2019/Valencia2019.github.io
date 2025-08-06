@@ -11,7 +11,7 @@ export const projects: Project[] = [
     {
         title:"Cypress Test Suite",
         tech:["Cypress.io"],
-        imageSrc:"",
+        imageSrc:"/live-demos/cypress-playground.png",
         github:"https://github.com/Valencia2019/cypress-playground",
         demo:"/project/cypress-playground",
         description:"The test suite in this GitHub Repository represents my 'bread and butter' as far as test automation goes since it's built on the Cypress.io framework and I use it daily in my current role."

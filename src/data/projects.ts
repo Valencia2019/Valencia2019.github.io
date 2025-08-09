@@ -9,9 +9,17 @@ export type Project = {
 
 export const projects: Project[] = [
     {
+        title:"My Portfolio",
+        tech:["Playwright","Jest", "Next.js", "TypeScript", "Tailwind", "Framer Motion"],
+        imageSrc:"/project-pictures/portfolio-home.png",
+        github:"https://github.com/Valencia2019/Valencia2019.github.io",
+        demo:"https://valencia2019.github.io/",
+        description:"This is the current portfolio you're viewing. It's built with Next.js and uses Framer Motion for animations, Tailwind for styling, Jest for unit testing, and Playwright for end-to-end testing."
+    },
+    {
         title:"Cypress Test Suite",
         tech:["Cypress.io"],
-        imageSrc:"/live-demos/cypress-playground.png",
+        imageSrc:"/project-pictures/cypress-playground-report.png",
         github:"https://github.com/Valencia2019/cypress-playground",
         demo:"/project/cypress-playground",
         description:"The test suite in this GitHub Repository represents my 'bread and butter' as far as test automation goes since it's built on the Cypress.io framework and I use it daily in my current role."

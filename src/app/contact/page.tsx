@@ -46,15 +46,20 @@ export default function ContactPage() {
               <p className="text-white/80 italic">
                 For QA consultations, please come prepared with any existing documentation or testing frameworks you&apos;re using. Screenshots or demos are helpful!
               </p>
-              <label htmlFor="checkbox" className="flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  id="checkbox"
-                  checked={showContactInfo}
-                  onChange={toggleContactInfo}
-                  data-testid="checkbox"
-                />
-                <span className="text-white/80">I&apos;ve read and understand the above.</span>
+              <label htmlFor="checkbox" className="flex flex-col items-start space-y-2 group">
+                <div className="flex items-center space-x-2">
+                  <input
+                    type="checkbox"
+                    id="checkbox"
+                    checked={showContactInfo}
+                    onChange={toggleContactInfo}
+                    data-testid="checkbox"
+                  />
+                  <span className="text-white/80">I&apos;ve read and understand the above.</span>
+                </div>
+                <p className="tooltip opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <em>*This is mainly to avoid AI or other automated responses.*</em>
+                </p>
               </label>
             </div>
 

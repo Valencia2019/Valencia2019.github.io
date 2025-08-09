@@ -12,7 +12,7 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ title, tech, github, demo, description, imageSrc }) => {
   return (
-    <article className="relative bg-zinc-900 border border-zinc-700 rounded-2xl overflow-hidden shadow-md transition-all hover:scale-[1.02]">
+    <article className="sm:w-sm md:w-md w-1/2 bg-zinc-900 border border-zinc-700 rounded-2xl overflow-hidden shadow-md transition-all hover:scale-[1.02]">
       {/* Image */}
       <div className="relative w-full h-48">
         <Image

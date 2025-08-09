@@ -1,4 +1,5 @@
-// __tests__/report-page.test.tsx
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-require-imports */
 import { render, screen } from '@testing-library/react';
 import { notFound } from 'next/navigation';
 import {  generateStaticParams } from './page';

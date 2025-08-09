@@ -71,8 +71,8 @@ export const Navbar = () => {
 
           </div>
           <div className="flex-1 flex items-center justify-end">
-            <div className="flex space-x-4">
-              <Link href="/" className="text-white px-3 py-2 rounded-md text-md font-medium hover:text-gray-300 hover:underline" data-testid="home-link">
+            <div className="flex sm:space-x-2 lg:space-x-4">
+              <Link href="/" className="text-white px-3 py-2 rounded-md sm:text-sm text-md lg:text-lg font-medium hover:text-gray-300 hover:underline" data-testid="home-link">
                 <h1>Home</h1>
               </Link>
               <div className="relative inline-block"
@@ -85,18 +85,18 @@ export const Navbar = () => {
                     }}
                   >
                     <button
-                      className="text-white px-3 py-2 rounded-md text-md font-medium hover:text-gray-300 hover:underline"
+                      className="text-white px-3 py-2 rounded-md sm:text-sm text-md lg:text-lg font-medium hover:text-gray-300 hover:underline"
                       aria-haspopup="true"
                       aria-expanded={isOpen}
                       id="freelance-button"
                       data-testid="freelance-button"
                       onClick={() => toggleMenu(!isOpen)}
                     >
-                      <h1>
+                      <h1 className="flex items-center">
                         {isOpen ? (
-                          <MdArrowDropDown className="inline ml-2" />
+                          <MdArrowDropDown className="inline" />
                         ) : (
-                          <MdArrowDropUp className="inline ml-2" />
+                          <MdArrowDropUp className="inline" />
                         )}{" "}
                         Freelance
                       </h1>
@@ -111,14 +111,14 @@ export const Navbar = () => {
                       >
                         <Link
                           href="/freelance"
-                          className="block text-white px-3 py-2 rounded-md text-md font-medium hover:text-gray-300 hover:underline"
+                          className="block text-white px-3 py-2 rounded-md sm:text-sm text-md lg:text-lg font-medium hover:text-gray-300 hover:underline"
                           data-testid="freelance-link"
                         >
                           <h1>Freelance</h1>
                         </Link>
                         <Link
                           href="/freelance/services"
-                          className="block text-white px-3 py-2 rounded-md text-md font-medium hover:text-gray-300 hover:underline"
+                          className="block text-white px-3 py-2 rounded-md sm:text-sm  text-md font-medium hover:text-gray-300 hover:underline"
                           data-testid="services-link"
                         >
                           <h1>Services</h1>
@@ -126,10 +126,10 @@ export const Navbar = () => {
                       </div>
                     )}
                   </div>
-              <Link href="/projects" className="text-white px-3 py-2 rounded-md text-md font-medium hover:text-gray-300 hover:underline" data-testid="projects-link">
+              <Link href="/projects" className="text-white px-3 py-2 rounded-md sm:text-sm text-md lg:text-lg font-medium hover:text-gray-300 hover:underline" data-testid="projects-link">
                 <h1>Projects</h1>
               </Link>
-              <Link href="/contact" className="text-white px-3 py-2 rounded-md text-md font-medium hover:text-gray-300 hover:underline" data-testid="contact-link">
+              <Link href="/contact" className="text-white px-3 py-2 rounded-md sm:text-sm text-md lg:text-lg font-medium hover:text-gray-300 hover:underline" data-testid="contact-link">
                 <h1>Contact</h1>
               </Link>
             </div>

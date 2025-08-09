@@ -7,8 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest",
-    "test:watch": "jest --verbose=true --watch"
+    "test:unit": "jest",
+    "test:unit:watch": "jest --verbose=true --watch",
+    "test:e2e": "npx playwright test"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.10",

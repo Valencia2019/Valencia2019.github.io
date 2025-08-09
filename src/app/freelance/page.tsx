@@ -6,19 +6,19 @@ export default function FreelancePage() {
   return (
     <div className="min-h-screen">
 
-      <main className="container max-w-4xl mx-auto flex flex-grow">
-        <div className="flex-1 md:flex-initial md:w-1/3 md:pr-8 mr-8">
+      <main className="container max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="md:col-span-1">
           <HalfOval accentColor="#8B5CF6"
             content={{
               text: "I'm currently available for freelance QA consulting or dev work. Feel free to reach out via email, connect on LinkedIn, or schedule a call.",
             }}
           />
         </div>
-        <div className="flex-2 md:flex-initial md:pl-8 max-w-4xl">
+        <div className="md:col-span-1 mx-10">
           <section>
             <h1 className="text-4xl font-bold mb-4">Booking My Freelance Services</h1>
             <p className="text-gray-300 text-lg">
-              Here&apos;s what to expect when working with me for QA consulting or custom web development.
+              Here&apos;s what you can expect when working with me on a project:
             </p>
           </section>
 
@@ -31,6 +31,7 @@ export default function FreelancePage() {
                 <Link
                   href="/contact"
                   className="text-indigo-400 hover:underline text-sm"
+                  data-testid="send-inquiry-link"
                 >
                   Send Inquiry
                 </Link>
@@ -42,7 +43,7 @@ export default function FreelancePage() {
               title="Schedule a Call"
               description="We'll meet to talk through your needs in more detail. You can either use my Calendly link or I'll follow up to schedule a time that works."
               action={
-                <Link href="/contact#schedule">Schedule via Calendly</Link>
+                <Link href="/contact#schedule" className="text-indigo-400 hover:underline text-sm" data-testid="schedule-link" >Schedule via Calendly</Link>
               }
             />
 
@@ -78,6 +79,7 @@ export default function FreelancePage() {
             <Link
               href="/freelance/services"
               className="text-indigo-400 underline mt-2 inline-block"
+              data-testid="view-services-link"
             >
               View My QA & Web Development Services →
             </Link>

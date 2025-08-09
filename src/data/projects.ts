@@ -18,7 +18,7 @@ export const projects: Project[] = [
     },
     {
         title:"Cypress Test Suite",
-        tech:["Cypress.io"],
+        tech:["Cypress.io", "JavaScript", "Node.js"],
         imageSrc:"/project-pictures/cypress-playground-report.png",
         github:"https://github.com/Valencia2019/cypress-playground",
         demo:"/project/cypress-playground",

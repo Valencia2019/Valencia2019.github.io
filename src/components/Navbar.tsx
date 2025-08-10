@@ -118,7 +118,7 @@ export const Navbar = () => {
                         </Link>
                         <Link
                           href="/freelance/services"
-                          className="block text-white px-3 py-2 rounded-md sm:text-sm  text-md font-medium hover:text-gray-300 hover:underline"
+                          className="block text-white px-3 py-2 rounded-md sm:text-sm text-md lg:text-lg font-medium hover:text-gray-300 hover:underline"
                           data-testid="services-link"
                         >
                           <h1>Services</h1>

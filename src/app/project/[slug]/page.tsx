@@ -57,12 +57,12 @@ export default async function ReportPage(props: { params: Promise<{ slug: string
         <h1 className="text-3xl font-bold mb-4">🧪 {projectName} Report</h1>
 
         <div className="grid grid-cols-2 gap-4 mb-8">
-          <div>Total Tests: <strong>{summary.totalTests}</strong></div>
-          <div>⏱ Duration: <strong>{(summary.duration / 1000).toFixed(2)}s</strong></div>
-          <div>✅ Passed: <strong>{summary.passes}</strong></div>
-          <div>📅 Start: <strong>{new Date(summary.start).toLocaleString()}</strong></div>
-          <div>❌ Failed: <strong>{summary.failures}</strong></div>
-          <div>📅 End: <strong>{new Date(summary.end).toLocaleString()}</strong></div>
+          <div data-testid='total-tests'>Total Tests: <strong>{summary.totalTests}</strong></div>
+          <div data-testid='duration'>⏱ Duration: <strong>{(summary.duration / 1000).toFixed(2)}s</strong></div>
+          <div data-testid='total-passed'>✅ Passed: <strong>{summary.passes}</strong></div>
+          <div data-testid='start'>📅 Start: <strong>{new Date(summary.start).toLocaleString()}</strong></div>
+          <div data-testid='total-failed'>❌ Failed: <strong>{summary.failures}</strong></div>
+          <div data-testid='end'>📅 End: <strong>{new Date(summary.end).toLocaleString()}</strong></div>
         </div>
 
         {suites.map((suite, idx) => (
@@ -72,9 +72,9 @@ export default async function ReportPage(props: { params: Promise<{ slug: string
 
             <ul className="space-y-2">
               {suite.tests.map((test, i) => (
-                <li key={i} className={`p-4 border rounded ${test.state === 'passed' ? 'bg-green-50' : 'bg-red-50'}`}>
+                <li key={i} className={`p-4 border rounded `}>
                   <p className="font-medium">{test.title}</p>
-                  <p>Status: <strong>{test.state}</strong></p>
+                  <p>Status: <strong className={test.state === 'passed' ? 'text-green-600' : 'text-red-600'}>{test.state}</strong></p>
                   <p>Duration: {test.duration}ms</p>
                   {test.error && (
                     <pre className="text-red-600 text-sm whitespace-pre-wrap mt-2">{test.error}</pre>
@@ -86,14 +86,19 @@ export default async function ReportPage(props: { params: Promise<{ slug: string
         ))}
 
         <div className="mt-10">
-          <Link href="/projects" className="text-blue-600 hover:underline text-sm">
+          <Link href="/projects" data-testid="back-to-projects" className="text-blue-600 hover:underline text-sm">
             ← Back to Projects
           </Link>
         </div>
       </div>
     );
   } catch (err) {
-    console.log(err);
+    //log the error but don't break the page
+    if( err instanceof Error && err.message.includes('no such file or directory') ) {
+      //console.log("Error reading report. Likely file not found.");
+    } else {
+      console.error(err);
+    }
     return notFound();
   }
 }

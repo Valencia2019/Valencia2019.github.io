@@ -34,9 +34,9 @@ export default function Home() {
 
         {/* CTA Buttons */}
         <div className="mt-12 space-x-4 flex justify-center">
-          <a href="/projects" className="bg-white px-4 py-2 rounded-md text-black">View Work</a>
-          <a href="/resume.pdf" target="_blank" className="bg-white px-4 py-2 rounded-md text-black">View Resume</a>
-          <a href="/contact" className="bg-white px-4 py-2 rounded-md text-black">Hire Me</a>
+          <a href="/projects" className="bg-white px-4 py-2 rounded-md text-black" data-testid="view-work-link">View Work</a>
+          <a href="/resume.pdf" target="_blank" className="bg-white px-4 py-2 rounded-md text-black" data-testid="view-resume-link">View Resume</a>
+          <a href="/contact" className="bg-white px-4 py-2 rounded-md text-black" data-testid="hire-me-link">Hire Me</a>
         </div>
       </main >
     </div>

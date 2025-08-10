@@ -11,8 +11,10 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ title, tech, github, demo, description, imageSrc }) => {
+  //turn project title into dyanmic test id part
+  const testId = title.replace(/\s+/g, '-').toLowerCase();
   return (
-    <article className="relative bg-zinc-900 border border-zinc-700 rounded-2xl overflow-hidden shadow-md transition-all hover:scale-[1.02]">
+    <article className="sm:w-sm md:w-md w-1/2 bg-zinc-900 border border-zinc-700 rounded-2xl overflow-hidden shadow-md transition-all hover:scale-[1.02]" data-testid={`project-card-${testId}`}  >
       {/* Image */}
       <div className="relative w-full h-48">
         <Image
@@ -20,6 +22,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ title, tech, github, d
           alt={`${title} thumbnail`}
           fill
           className="object-cover"
+          data-testid={`project-card-image-${testId}`}
         />
       </div>
 

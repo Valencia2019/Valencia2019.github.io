@@ -21,7 +21,6 @@ jest.mock('next/image', () => {
 jest.mock('framer-motion', () => ({
   motion: {
     div: (props: ImageProps) => {
-      console.log('Mock motion.div called with props:', props);
       return <div {...props} />;
     },
   },

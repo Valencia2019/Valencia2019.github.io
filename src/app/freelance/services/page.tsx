@@ -27,22 +27,32 @@ export default function ServicesPage() {
   const visibleServices = filteredServices.slice(0, visibleCount);
 
   return (
-      <div className="flex flex-col md:flex-row gap-8 max-w-7xl mx-auto min-h-screen">
-        <ServicesMenu
-          categories={grouped}
-          selectedCategory={selectedCategory}
-          selectedSubCategory={selectedSubCategory}
-          onSelect={(cat, sub) => {
-            setSelectedCategory(cat);
-            setSelectedSubCategory(sub);
-            setVisibleCount(3);
-          }}
-        />
-
-        <main className="flex-grow">
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 mt-20">
+    <main className="flex-grow flex flex-col">
+      <div className="items-center mb-4">
+        <h1 className="text-4xl font-bold mb-2 flex justify-center">My Freelance Services</h1>
+        <p className="text-gray-300 text-lg flex justify-center">
+          Here&apos;s a list of the freelance services I offer and starting prices.
+        </p>
+      </div>
+      <div className="flex flex-row">
+        <div className="flex flex-col w-1/4 md:w-1/3 xl:w-1/4 ml-4 lg:ml-10">
+          <ServicesMenu
+            categories={grouped}
+            selectedCategory={selectedCategory}
+            selectedSubCategory={selectedSubCategory}
+            onSelect={(cat, sub) => {
+              setSelectedCategory(cat);
+              setSelectedSubCategory(sub);
+              setVisibleCount(3);
+            }}
+          />
+        </div>
+        <div className="flex flex-col">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-20 md:gap-8" data-testid="service-cards">
             {visibleServices.map((service, index) => (
-              <ServiceCard key={index} {...service} />
+              <div className="md:w-1/2 xl:w-full" key={index}>
+                <ServiceCard {...service} />
+              </div>
             ))}
           </div>
 
@@ -56,7 +66,8 @@ export default function ServicesPage() {
               </button>
             </div>
           )}
-        </main>
+        </div>
       </div>
+    </main>
   );
 }

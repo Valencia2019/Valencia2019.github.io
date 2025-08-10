@@ -1,4 +1,4 @@
-name: Branch/PR Lint and Test
+name: Lint and Unit Test
 
 on:
   push:
@@ -27,4 +27,4 @@ jobs:
         run: npm run lint
 
       - name: Run unit tests
-        run: npm run test -- --ci
+        run: npm run test:unit -- --ci

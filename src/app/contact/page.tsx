@@ -36,7 +36,7 @@ export default function ContactPage() {
             <div className="mt-8 p-6 bg-white/5 border border-white/10 rounded-lg text-sm text-white space-y-4">
               <h2 className="text-lg font-semibold text-lime-400">📋 Before You Reach Out</h2>
               <p>To help us make the most of our time, please include the following in your message or be ready to discuss them during our call:</p>
-              <ul className="list-disc list-inside space-y-1 text-white/90">
+              <ul className="list-disc list-inside space-y-1 text-white/90" data-testid="before-you-reach-out-list">
                 <li>Your name, company, and role</li>
                 <li>A short description of your project or QA needs</li>
                 <li>What stage your product is in (MVP, scaling, maintenance, etc.)</li>
@@ -46,15 +46,20 @@ export default function ContactPage() {
               <p className="text-white/80 italic">
                 For QA consultations, please come prepared with any existing documentation or testing frameworks you&apos;re using. Screenshots or demos are helpful!
               </p>
-              <label htmlFor="checkbox" className="flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  id="checkbox"
-                  checked={showContactInfo}
-                  onChange={toggleContactInfo}
-                  data-testid="checkbox"
-                />
-                <span className="text-white/80">I&apos;ve read and understand the above.</span>
+              <label htmlFor="checkbox" className="flex flex-col items-start space-y-2 group">
+                <div className="flex items-center space-x-2">
+                  <input
+                    type="checkbox"
+                    id="checkbox"
+                    checked={showContactInfo}
+                    onChange={toggleContactInfo}
+                    data-testid="checkbox"
+                  />
+                  <span className="text-white/80">I&apos;ve read and understand the above.</span>
+                </div>
+                <p className="tooltip opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <em>*This is mainly to avoid AI or other automated responses.*</em>
+                </p>
               </label>
             </div>
 

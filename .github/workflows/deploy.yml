@@ -13,6 +13,9 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: true
+env:
+  CI: true
+  NODE_ENV: production
 
 jobs:
   build:
@@ -26,7 +29,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
@@ -71,7 +74,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: lts/*
-          cache: 'npm'
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
@@ -80,7 +83,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run End to End tests on deployed site
-        run: npx playwright test --base-url "https://valencia2019.github.io/"
+        run: npx playwright test
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}

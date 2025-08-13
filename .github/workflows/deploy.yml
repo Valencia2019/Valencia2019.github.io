@@ -13,6 +13,7 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: true
+
 env:
   CI: true
   NODE_ENV: production
@@ -30,9 +31,13 @@ jobs:
         with:
           node-version: 20
           cache: "npm"
+          cache-dependency-path: package-lock.json # ensures cache refresh when lock file changes
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install
+          npm install --save-dev typescript@latest @types/react@latest @types/node@latest
 
       - name: Lint code
         run: npm run lint
@@ -52,11 +57,9 @@ jobs:
 
   deploy:
     needs: build
-
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
@@ -75,9 +78,13 @@ jobs:
         with:
           node-version: lts/*
           cache: "npm"
+          cache-dependency-path: package-lock.json
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install
+          npm install --save-dev typescript@latest @types/react@latest @types/node@latest
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps

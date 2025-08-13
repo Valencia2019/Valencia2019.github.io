@@ -63,9 +63,6 @@ jobs:
   e2e:
     needs: deploy
     runs-on: ubuntu-latest
-    env:
-      CI: true
-      NODE_ENV: production
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -83,6 +80,9 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run End to End tests on deployed site
+        env:
+          CI: true
+          NODE_ENV: production
         run: npx playwright test
 
       - uses: actions/upload-artifact@v4

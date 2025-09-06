@@ -19,7 +19,7 @@ export default function Home() {
 
           <div className="max-w-xl text-white text-xl leading-relaxed text-center md:text-left">
             <p>
-              Hi, my name is Valencia (but I also go by Vee and/or Wolf)! I am a Principal QA Engineer & Test Automation Leader with over 10 years of professional experience working in tech.
+              Hi, my name is Valencia (but I also go by Vee and/or Wolf)! I am a Principal QA Engineer with over 10 years of professional experience working in tech.
               I specialize in architecting scalable test frameworks, driving CI/CD integration, and leading QA teams to deliver high-quality software.
               My expertise spans JavaScript frameworks, like Cypress and Playwright, for automation, along with hands-on development of custom testing tools.
               I am passionate about shift-left testing--which to me means asking questions early and often--

@@ -31,7 +31,7 @@ export default function ServicesPage() {
       <div className="items-center mb-4">
         <h1 className="text-4xl font-bold mb-2 flex justify-center">My Freelance Services</h1>
         <p className="text-gray-300 text-lg flex justify-center">
-          Here&apos;s a list of the freelance services I offer and starting prices.
+          Here&apos;s a list of the freelance services I offer and starting prices. The larger the project, the higher the price.
         </p>
       </div>
       <div className="flex flex-row">

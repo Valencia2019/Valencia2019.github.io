@@ -19,6 +19,7 @@ test('Send Inquiry link is visible and clickable', {
   tag: '@regression',
 }, async ({ page }) => {
     const sendInquiryLink = page.getByTestId('send-inquiry-link');
+    await sendInquiryLink.scrollIntoViewIfNeeded(); //seems redundant, however noticed some flaky behavior across different browsers
     await expect(sendInquiryLink).toBeVisible();
     await expect(sendInquiryLink).toHaveText('Send Inquiry');
     await expect(sendInquiryLink).toHaveAttribute('href', expect.stringContaining('contact'));
@@ -30,6 +31,7 @@ test('Schedule via Calendly link is visible and clickable', {
   tag: '@regression',
 }, async ({ page }) => {
     const calendlyLink = page.getByTestId('schedule-link');
+    await calendlyLink.scrollIntoViewIfNeeded();
     await expect(calendlyLink).toBeVisible();
     await expect(calendlyLink).toHaveText('Schedule via Calendly');
     await expect(calendlyLink).toHaveAttribute('href', expect.stringContaining('contact/#schedule'));
@@ -42,9 +44,12 @@ test('View My QA & Web Development Services link is visible and clickable', {
   tag: '@regression',
 }, async ({ page }) => {
     const viewServicesLink = page.getByTestId('view-services-link');
+    await viewServicesLink.scrollIntoViewIfNeeded();
     await expect(viewServicesLink).toBeVisible();
     await expect(viewServicesLink).toContainText('View My QA & Web Development Services');
     await expect(viewServicesLink).toHaveAttribute('href', expect.stringContaining('services'));
-    await viewServicesLink.click({force: true});
-    await expect(page).toHaveURL(/freelance\/services\/?$/);
+    await viewServicesLink.click();
+    //wait for navigation to complete
+    await page.waitForURL(/\/freelance\/services/);
+    await expect(page.getByRole('heading', { name: 'My Freelance Services' })).toBeVisible();
 });

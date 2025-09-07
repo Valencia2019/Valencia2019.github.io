@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
 
 test('Contact page has expected content', async ({ page }) => {
   await expect(page.getByRole('heading', { name: /Contact Me/i })).toBeVisible();
-  await expect(page.getByText(/I'm currently available for freelance QA consulting or dev work/i)).toBeVisible();
+  await expect(page.getByText(/I'm always happy to chat about new opportunities. I can also point you to my peers who do have availability. Reach out via email, LinkedIn, or schedule a call with me./i)).toBeVisible();
   await expect(page.getByRole('heading', { name: /Before You Reach Out/i })).toBeVisible();
   await expect(page.getByText(/To help us make the most of our time, please include the following in your message or be ready to discuss them during our call:/i)).toBeVisible();
   await expect(page.getByTestId('before-you-reach-out-list')).toBeVisible();

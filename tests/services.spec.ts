@@ -22,7 +22,7 @@ test('has heading on freelance services page', {
 test('verify services page has expected content', { 
   tag: '@regression',
 }, async ({ page }) => {
-    await expect(page.getByText('Here\'s a list of the freelance services I offer and starting prices.')).toBeVisible();
+    await expect(page.getByText("Here's a list of the freelance services I offer and starting prices. The larger the project, the higher the price.")).toBeVisible();
     await expect(page.getByTestId('services-menu')).toBeVisible();
     await expect(page.getByTestId('service-cards')).toBeVisible();
 

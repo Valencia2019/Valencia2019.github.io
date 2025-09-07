@@ -11,7 +11,7 @@ test('verify projects page has expected content', {
 }, async ({ page }) => {
     await expect(page).toHaveURL(/\/projects/);
     await expect(page.getByRole('heading', { name: 'My Projects' })).toBeVisible();
-    await expect(page.getByText('Here are some of the sample projects I\'ve worked on. The demo links for the test projects lead to report pages.')).toBeVisible();
+    await expect(page.getByText("All of the professional work I've done can't be shared publicly for privacy reasons.")).toBeVisible();
 });
 
 test('verify project cards are present', {

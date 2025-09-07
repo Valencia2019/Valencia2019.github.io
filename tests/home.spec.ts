@@ -17,7 +17,7 @@ test('has text on home page', {
   await expect(page.getByRole('heading', { name: 'Welcome to my Portfolio' })).toBeVisible();
 
   // Check for the portfolio paragraph
-  await expect(page.getByText('Hi, I’m Valencia (V/Wolf) – a Principal QA Engineer & Test Automation Leader with 10+ years in tech. I specialize in architecting scalable test frameworks, driving CI/CD integration, and leading teams to deliver high-quality software. My expertise spans JavaScript, Cypress, and Playwright for automation, along with hands-on development of custom testing tools. Passionate about shift-left testing and mentoring engineers, I bridge quality and engineering through risk-driven strategies and process innovation.')).toBeVisible();
+  await expect(page.getByText('Hi, my name is Valencia (but I also go by Vee and/or Wolf)! I am a Principal QA Engineer with over 10 years of professional experience working in tech. I specialize in architecting scalable test frameworks, driving CI/CD integration, and leading QA teams to deliver high-quality software.')).toBeVisible();
 });
 
 test('has profile image in a half oval', {

@@ -30,7 +30,7 @@ export default function ContactPage() {
           <div className="flex-1 space-y-6 max-w-xl">
             <h1 className="text-4xl font-bold text-white">Contact Me</h1>
             <p className="text-gray-400">
-              I&apos;m currently available for freelance QA consulting or dev work. Reach out via email, LinkedIn, or schedule a call.
+              I&apos;m always happy to chat about new opportunities. I can also point you to my peers who do have availability. Reach out via email, LinkedIn, or schedule a call with me.
             </p>
 
             <div className="mt-8 p-6 bg-white/5 border border-white/10 rounded-lg text-sm text-white space-y-4">
@@ -38,10 +38,12 @@ export default function ContactPage() {
               <p>To help us make the most of our time, please include the following in your message or be ready to discuss them during our call:</p>
               <ul className="list-disc list-inside space-y-1 text-white/90" data-testid="before-you-reach-out-list">
                 <li>Your name, company, and role</li>
+                <li>A link to your product or website</li>
                 <li>A short description of your project or QA needs</li>
                 <li>What stage your product is in (MVP, scaling, maintenance, etc.)</li>
                 <li>Any current blockers or pain points in your QA process</li>
                 <li>Your timeline and budget expectations</li>
+                <li>As well as the type of role (Contract, Full-time, etc.)</li>
               </ul>
               <p className="text-white/80 italic">
                 For QA consultations, please come prepared with any existing documentation or testing frameworks you&apos;re using. Screenshots or demos are helpful!

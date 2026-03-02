@@ -36,7 +36,23 @@ test('verify project cards content', {
         await expect(projectCard).toBeVisible();
         await expect(projectCard.getByTestId(`project-card-image-${testId}`)).toBeVisible();
         await expect(projectCard.getByRole('heading', { name: project.title })).toBeVisible();
-        await expect(projectCard.getByRole('link', { name: 'GitHub' })).toHaveAttribute('href', project.github);
-        await expect(projectCard.getByRole('paragraph')).toHaveText(project.description);
+
+        if (project.github) {
+            await expect(projectCard.getByRole('link', { name: 'GitHub' })).toHaveAttribute('href', project.github);
+        } else {
+            await expect(projectCard.getByRole('link', { name: 'GitHub' })).toHaveCount(0);
+            await expect(projectCard.getByText('GitHub')).toHaveAttribute('aria-disabled', 'true');
+        }
+
+        if (project.demo) {
+            const demoLabel = project.demoType === 'report' ? 'View Report' : 'Live Demo';
+            await expect(projectCard.getByRole('link', { name: demoLabel })).toHaveAttribute('href', project.demo);
+        } else {
+            const demoLabel = project.demoType === 'report' ? 'View Report' : 'Live Demo';
+            await expect(projectCard.getByRole('link', { name: demoLabel })).toHaveCount(0);
+            await expect(projectCard.getByText(demoLabel)).toHaveAttribute('aria-disabled', 'true');
+        }
+
+        await expect(projectCard.getByText(project.description)).toBeVisible();
     }
 });

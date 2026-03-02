@@ -93,10 +93,8 @@ export default async function ReportPage(props: { params: Promise<{ slug: string
       </div>
     );
   } catch (err) {
-    //log the error but don't break the page
-    if( err instanceof Error && err.message.includes('no such file or directory') ) {
-      //console.log("Error reading report. Likely file not found.");
-    } else {
+    // Missing report files are expected for unknown slugs, so avoid logging noise.
+    if (!(typeof err === 'object' && err !== null && 'code' in err && err.code === 'ENOENT')) {
       console.error(err);
     }
     return notFound();

@@ -14,7 +14,7 @@ test('has updated summary text on home page', {
   tag: '@smoke',
 }, async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Welcome to my Portfolio' })).toBeVisible();
-  await expect(page.getByText(/Principal QA Engineer \/ SDET with 10\+ years of experience architecting automation frameworks/i)).toBeVisible();
+  await expect(page.getByText(/Principal QA Engineer with 10\+ years of experience architecting automation frameworks/i)).toBeVisible();
 });
 
 test('has profile image in a half oval', {

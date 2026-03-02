@@ -26,7 +26,7 @@ describe('Home Page', () => {
 
   it('includes bio content', () => {
     render(<Home />);
-    expect(screen.getByText(/principal qa engineer \/ sdet/i)).toBeInTheDocument();
+    expect(screen.getByText(/principal qa engineer with 10\+ years of experience/i)).toBeInTheDocument();
     expect(screen.getByText(/10\+ years of experience/i)).toBeInTheDocument();
     expect(screen.getByText(/deterministic test data strategies/i)).toBeInTheDocument();
   });

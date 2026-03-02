@@ -29,22 +29,14 @@ describe('Validating the Navbar component', () => {
 
   it('renders all nav links', () => {
     render(<Navbar />);
-    
+
     expect(screen.getByTestId('home-link')).toBeInTheDocument();
     expect(screen.getByTestId('contact-link')).toBeInTheDocument();
     expect(screen.getByTestId('projects-link')).toBeInTheDocument();
-    const freelanceBtn = screen.getByTestId('freelance-button');
-    expect(freelanceBtn).toBeInTheDocument();
-    act(() => {
-      freelanceBtn.click();
-    })
-    setTimeout(() => {
-      expect(screen.getByTestId('freelance-menu')).toBeInTheDocument();
-      expect(screen.getByTestId('freelance-link')).toBeInTheDocument();
-    expect(screen.getByTestId('services-link')).toBeInTheDocument();
-    })
-
-    
+    expect(screen.queryByTestId('freelance-button')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('freelance-menu')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('freelance-link')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('services-link')).not.toBeInTheDocument();
   });
 
   it('adds a shadow class when scrolling down', () => {
@@ -54,12 +46,9 @@ describe('Validating the Navbar component', () => {
     expect(nav).not.toHaveClass('shadow-lg');
 
     act(() => {
-        scrollTo(100);
+      scrollTo(100);
     });
-    // Give time for useEffect to run
-    setTimeout(() => {
-      expect(nav).toHaveClass('shadow-lg');
-    }, 100);
+    expect(nav).toHaveClass('shadow-lg');
   });
 
   it('removes shadow class when scrolling to top', () => {
@@ -67,19 +56,13 @@ describe('Validating the Navbar component', () => {
 
     const nav = container.querySelector('nav');
     act(() => {
-        scrollTo(100);
+      scrollTo(100);
     });
-    // Give time for useEffect to run
-    setTimeout(() => {
-      expect(nav).toHaveClass('shadow-lg');
-    }, 100);
-    act(() => {
-        scrollTo(0);
-    });
+    expect(nav).toHaveClass('shadow-lg');
 
-    // Again wait a moment for effect
-    setTimeout(() => {
-      expect(nav).not.toHaveClass('shadow-lg');
-    }, 100);
+    act(() => {
+      scrollTo(0);
+    });
+    expect(nav).not.toHaveClass('shadow-lg');
   });
 });

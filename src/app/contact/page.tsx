@@ -34,7 +34,7 @@ export default function ContactPage() {
             </p>
 
             <div className="mt-8 p-6 bg-white/5 border border-white/10 rounded-lg text-sm text-white space-y-4">
-              <h2 className="text-lg font-semibold text-lime-400">📋 Before You Reach Out</h2>
+              <h2 className="text-lg font-semibold text-lime-400">Before You Reach Out</h2>
               <p>To help us make the most of our time, please include the following in your message or be ready to discuss them during our call:</p>
               <ul className="list-disc list-inside space-y-1 text-white/90" data-testid="before-you-reach-out-list">
                 <li>Your name, company, and role</li>

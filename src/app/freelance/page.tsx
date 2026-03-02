@@ -26,7 +26,7 @@ export default function FreelancePage() {
             <Step
               step="1"
               title="Send an Inquiry"
-              description="Email me a brief overview of your project, what services you need, and your goals. If you're not sure yet, that's okay—this helps kick off the conversation."
+              description="Email me a brief overview of your project, what services you need, and your goals. If you're not sure yet, that's okay - this helps kick off the conversation."
               action={
                 <Link
                   href="/contact"
@@ -56,7 +56,7 @@ export default function FreelancePage() {
             <Step
               step="4"
               title="Contract Agreement"
-              description="We'll sign a contract to protect both parties. You can provide your own contract, or I can share mine—whichever works best for your business."
+              description="We'll sign a contract to protect both parties. You can provide your own contract, or I can share mine - whichever works best for your business."
             />
 
             <Step
@@ -81,7 +81,7 @@ export default function FreelancePage() {
               className="text-indigo-400 underline mt-2 inline-block"
               data-testid="view-services-link"
             >
-              View My QA & Web Development Services →
+              View My QA & Web Development Services
             </Link>
           </section>
         </div>
@@ -112,4 +112,3 @@ function Step({
     </div>
   );
 }
-

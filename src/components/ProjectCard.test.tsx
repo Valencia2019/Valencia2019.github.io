@@ -10,6 +10,7 @@ describe('ProjectCard component', () => {
     demo: 'https://test-project.vercel.app',
     demoType: 'live' as const,
     description: 'A demo project for testing purposes',
+    lastUpdated: '2026',
     imageSrc: ''
   };
 
@@ -28,6 +29,11 @@ describe('ProjectCard component', () => {
   it('renders the description', () => {
     render(<ProjectCard {...mockProps} />);
     expect(screen.getByText(mockProps.description)).toBeInTheDocument();
+  });
+
+  it('renders the last updated field', () => {
+    render(<ProjectCard {...mockProps} />);
+    expect(screen.getByText(`Last updated: ${mockProps.lastUpdated}`)).toBeInTheDocument();
   });
 
   it('has a GitHub link with correct href', () => {

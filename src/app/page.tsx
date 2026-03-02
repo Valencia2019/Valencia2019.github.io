@@ -1,18 +1,17 @@
-
 import { HalfOval } from "@/components/HalfOval";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
 
-      <main  className="flex-grow">
+      <main className="flex-grow">
         <h1 className="text-6xl font-bold text-center mb-12">Welcome to my Portfolio</h1>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-6xl w-full">
           <HalfOval
             accentColor="#8B5CF6"
             content={{
-              src: "/profilepic1.jpeg",
+              src: "/new-profile-photo.jpg",
               alt: "Portrait of Valencia",
             }}
           />
@@ -26,7 +25,7 @@ export default function Home() {
               and mentoring engineers.
               On my current project, I am working with xUnit, bUnit, Playwright, .NET Core, and Azure tools for comprehensive unit, integration, and end-to-end testing.
               <br /><br />
-              Based in the NYC metro area, I work remotely, but I also love meeting people and working in person. I thrive on solving complex problems and collaborating across teams—though I excel in independent work too.
+              Based in the NYC metro area, I work remotely, but I also love meeting people and working in person. I thrive on solving complex problems and collaborating across teams - though I excel in independent work too.
               When I&apos;m not on the clock, you&apos;ll find me gaming, exploring the city, or spending time with my family. Let&apos;s connect!
               <br /><br />
               <em>(Pronouns: she/her, they/them)</em>
@@ -40,7 +39,7 @@ export default function Home() {
           <a href="/resume.pdf" target="_blank" className="bg-white px-4 py-2 rounded-md text-black" data-testid="view-resume-link">View Resume</a>
           <a href="/contact" className="bg-white px-4 py-2 rounded-md text-black" data-testid="hire-me-link">Hire Me</a>
         </div>
-      </main >
+      </main>
     </div>
   );
 }

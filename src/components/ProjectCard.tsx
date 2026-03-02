@@ -4,7 +4,7 @@ import { Project } from '@/data/projects';
 
 type ProjectCardProps = Project;
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ title, tech, github, demo, description, imageSrc, demoType = 'live' }) => {
+export const ProjectCard: React.FC<ProjectCardProps> = ({ title, tech, github, demo, description, imageSrc, lastUpdated, demoType = 'live' }) => {
   //turn project title into dyanmic test id part
   const testId = title.replace(/\s+/g, '-').toLowerCase();
   const demoLabel = demoType === 'report' ? 'View Report' : 'Live Demo';
@@ -27,6 +27,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ title, tech, github, d
       {/* Content */}
       <div className="p-6 space-y-3">
         <h3 className="text-white text-2xl font-bold">{title}</h3>
+        <p className="text-white/50 text-xs" data-testid={`project-card-last-updated-${testId}`}>
+          Last updated: {lastUpdated}
+        </p>
         <p className="text-white/70 text-sm">{description}</p>
 
         {/* Tech Tags */}

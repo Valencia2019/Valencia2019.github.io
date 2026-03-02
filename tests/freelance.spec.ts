@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 
+test.skip(true, 'Freelance section is hidden from navigation pending redesign.');
+
 test.beforeEach(async ({ page }) => {
     await page.goto('/');
     await page.getByTestId('freelance-button').click();

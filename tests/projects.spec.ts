@@ -36,6 +36,7 @@ test('verify project cards content', {
         await expect(projectCard).toBeVisible();
         await expect(projectCard.getByTestId(`project-card-image-${testId}`)).toBeVisible();
         await expect(projectCard.getByRole('heading', { name: project.title })).toBeVisible();
+        await expect(projectCard.getByTestId(`project-card-last-updated-${testId}`)).toHaveText(`Last updated: ${project.lastUpdated}`);
 
         if (project.github) {
             await expect(projectCard.getByRole('link', { name: 'GitHub' })).toHaveAttribute('href', project.github);

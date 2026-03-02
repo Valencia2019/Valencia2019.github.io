@@ -52,6 +52,9 @@ export const Navbar = () => {
               <Link href="/projects" className="text-white px-3 py-2 rounded-md sm:text-sm text-md lg:text-lg font-medium hover:text-gray-300 hover:underline" data-testid="projects-link">
                 Projects
               </Link>
+              <Link href="/resume" className="text-white px-3 py-2 rounded-md sm:text-sm text-md lg:text-lg font-medium hover:text-gray-300 hover:underline" data-testid="resume-link">
+                Resume
+              </Link>
               <Link href="/contact" className="text-white px-3 py-2 rounded-md sm:text-sm text-md lg:text-lg font-medium hover:text-gray-300 hover:underline" data-testid="contact-link">
                 Contact
               </Link>

@@ -33,6 +33,7 @@ describe('Validating the Navbar component', () => {
     expect(screen.getByTestId('home-link')).toBeInTheDocument();
     expect(screen.getByTestId('contact-link')).toBeInTheDocument();
     expect(screen.getByTestId('projects-link')).toBeInTheDocument();
+    expect(screen.getByTestId('resume-link')).toBeInTheDocument();
     expect(screen.queryByTestId('freelance-button')).not.toBeInTheDocument();
     expect(screen.queryByTestId('freelance-menu')).not.toBeInTheDocument();
     expect(screen.queryByTestId('freelance-link')).not.toBeInTheDocument();

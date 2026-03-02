@@ -4,7 +4,12 @@ Link to the portfolio: https://valencia2019.github.io/
 
 ## Development instructions
 
-First, run the development server:
+First, install the dependencies:
+```bash
+npm i 
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev

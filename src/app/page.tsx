@@ -8,16 +8,18 @@ export default function Home() {
         <h1 className="text-6xl font-bold text-center mb-12">Welcome to my Portfolio</h1>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-6xl w-full">
-          <HalfOval
-            accentColor="#8B5CF6"
-            content={{
-              src: "/new-profile-photo.jpg",
-              alt: "Portrait of Valencia",
-            }}
-          />
+          <div className="md:-mt-8 md:-ml-6">
+            <HalfOval
+              accentColor="#8B5CF6"
+              content={{
+                src: "/new-profile-photo.jpg",
+                alt: "Portrait of Valencia",
+              }}
+            />
+          </div>
 
           <div className="max-w-xl text-white text-xl leading-relaxed text-center md:text-left">
-            <p>
+            <p className="mx-2 px-2">
               Hi, my name is Valencia (but I also go by Vee and/or Wolf)! I am a Principal QA Engineer with over 10 years of professional experience working in tech.
               I specialize in architecting scalable test frameworks, driving CI/CD integration, and leading QA teams to deliver high-quality software.
               My expertise spans JavaScript frameworks, like Cypress and Playwright, for automation, along with hands-on development of custom testing tools.

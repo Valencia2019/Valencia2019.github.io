@@ -14,7 +14,7 @@ describe('Home Page', () => {
 
   it('renders the CTA buttons', () => {
     render(<Home />);
-    expect(screen.getByText(/view work/i)).toBeInTheDocument();
+    expect(screen.getByText(/view personal projects/i)).toBeInTheDocument();
     expect(screen.getByText(/view resume/i)).toBeInTheDocument();
     expect(screen.getByText(/hire me/i)).toBeInTheDocument();
   });
@@ -26,8 +26,8 @@ describe('Home Page', () => {
 
   it('includes bio content', () => {
     render(<Home />);
-    expect(screen.getByText(/valencia/i)).toBeInTheDocument();
-    expect(screen.getByText(/principal qa engineer/i)).toBeInTheDocument();
-    expect(screen.getByText(/nyc metro/i)).toBeInTheDocument();
+    expect(screen.getByText(/principal qa engineer \/ sdet/i)).toBeInTheDocument();
+    expect(screen.getByText(/10\+ years of experience/i)).toBeInTheDocument();
+    expect(screen.getByText(/deterministic test data strategies/i)).toBeInTheDocument();
   });
 });
